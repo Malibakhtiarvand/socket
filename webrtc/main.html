@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>webrtc</title>
+    <link rel="stylesheet" type="text/css" href="css/Reset_css.css">
+    <link rel="stylesheet" type="text/css" href="css/main-page.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.0.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class='main_container d-flex justify-content-between'>
+        <div class='dashboard_container'>
+            <div class='logo_container'>
+                <img src='./utils/images/logo.png'></img>
+            </div>
+            <div>
+                <div class='description_container'>
+                    <p class='description_container_paragraph'>
+                        Talk with other user by passing his personal code or talk with strangers!
+                    </p>
+                </div>
+                <div class='personal_code_container border-radius-3'>
+                    <div class='personal_code_title_container pl-3 pt-3'>
+                        <p class='personal_code_title_paragraph'>
+                            Your personal code
+                        </p>
+                    </div>
+                    <div class="personal_code_value_container d-flex justify-content-center">
+                        <p class='personal_code_value_paragraph font-weight-bold text-white' id='personal_code_paragraph'>DDDDDD</p>
+                        <button class='personal_code_copy_button btn ml-1' id='personal_code_copy_button'>
+                            <img src='./utils/images/copyButton.png' class="d-flex align-items-center"></img>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class='personal_code_connecting_container'>
+                <p class='personal_code_connecting_paragraph'>Personal Code</p>
+                <div class='personal_code_connecting_input_container'>
+                    <input class='personal_code_input' id='personal_code_input'></input>
+                </div>
+                <div class='personal_code_connecting_buttons_container border-bottom mt-1 d-flex justify-content-between'>
+                    <button class='connecting_button btn' id='personal_code_chat_button'>
+                        <img src='./utils/images/chatButton.png' class='connecting_buttons_image'></img>
+                    </button>
+                    <button class='connecting_button btn' id='personal_code_video_button'>
+                        <img src='./utils/images/videoButton.png' class='connecting_buttons_image'></img>
+                    </button>
+                </div>
+            </div>
+            <div class='stranger_connecting_container mt-3 border-bottom'>
+                <p class='stranger_title_container'>Stranger</p>
+                <div class='stranger_buttons_container d-flex justify-content-between'>
+                    <button class='connecting_button btn' id='stranger_chat_button'>
+                        <img src='./utils/images/chatButton.png' class='connecting_buttons_image'></img>
+                    </button>
+                    <button class='connecting_button btn' id='stranger_video_button'>
+                        <img src='./utils/images/videoButton.png' class='connecting_buttons_image'></img>
+                    </button>
+                </div>
+            </div>
+            <div class='checkbox_container d-flex'>
+                <div class='checkbox_connection ml-1' id='allow_strangers_checkbox'>
+                    <!-- <img id='allow_strangers_checkbox_image' class='' src='./utils/images/check.png'></img> -->
+                    <input type="checkbox" name="" id="">
+                    
+                </div>
+                <p class='checkbox_container_paragraph'>Allow connection from strangers</p>
+            </div>
+            <div class='dashboard_blur display_none' id='dashboard_blur'></div>
+        </div>
+        <div class='call_container'>
+            <div class='videos_container d-flex flex-column align-items-center'>
+                <div id='video_placeholder' class='videos_placeholder'>
+                    <img src='./utils/images/logo.png' class="logo-video"></img>
+                </div>
+                <video class='remote_video display_none' autoplay id='remote_video'></video>
+                <div class='local_video_container'>
+                    <video class='local_video' id='local_video' muted autoplay></video>
+                </div>
+                <div class='call_buttons_container display_none' id='call_buttons'>
+                    <button class='call_button_small btn btn-dark' id='mic_button'>
+                        <img src='./utils/images/mic.png' id='mic_button_image'></img>
+                    </button>
+                    <button class='call_button_small btn btn-dark' id='camera_button'>
+                        <img src='./utils/images/camera.png' id='camera_button_image'></img>
+                    </button>
+                    <button class='call_button_large btn btn-dark' id='hang_up_button'>
+                        <img src='./utils/images/hangUp.png'></img>
+                    </button>
+                    <button class='call_button_small btn btn-dark' id='screen_sharing_button'>
+                        <img src='./utils/images/switchCameraScreenSharing.png'></img>
+                    </button>
+                    <button class='call_button_small btn btn-dark' id='start_recording_button'>
+                        <img src='./utils/images/recordingStart.png'></img>
+                    </button>
+                </div>
+                <div class='finish_chat_button_container display_none' id='finish_chat_button_container'>
+                    <button class='call_button_large btn btn-success' id='finish_chat_call_button'>
+                        <img src='./utils/images/hangUp.png'></img>
+                    </button>
+                </div>
+                <div class='video_recording_buttons_container display_none' id='video_recording_buttons'>
+                    <button class="btn btn-info" id='pause_recording_button'>
+                        <img src='./utils/images/pause.png'></img>
+                    </button>
+                    <button id='resume_recording_button' class='display_none btn btn-danger'>
+                        <img src='./utils/images/resume.png'></img>
+                    </button>
+                    <button id='stop_recording_button' class="btn btn-dark">
+                        Stop recording
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class='messenger_container' id="messages_container_fields">
+            <div class='messages_container messages_container_text' id='messages_container'></div>
+            <div class='new_message_container display_none' id='new_message'>
+                <input class='new_message_input' id='new_message_input' type='text'
+                    placeholder="Type your message..."></input>
+                <button class='send_message_button btn btn-warning' id='send_message_button'>
+                    <img class='send_message_button_image' src='./utils/images/sendMessageButton.png'></image>
+                </button>
+            </div>
+        </div>
+        <div id='dialog'></div>
+    </div>
+</body>
+
+</html>
